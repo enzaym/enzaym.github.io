@@ -28,6 +28,11 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.time {
+    font-family: var(--font);
+    color: var(--foreground);
+}
+
 .prompt {
     font-family: var(--font);
     color: var(--foreground);
