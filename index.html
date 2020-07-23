@@ -18,19 +18,26 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>おかえりなさいみずさま！</title>
     </head>
-    <body>
+    <script>
+        function startTime() {
+          var today = new Date();
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt').innerHTML =
+          "It is currently " + h + ":" + m + ":" + s;
+          var t = setTimeout(startTime, 500)
+        }
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};
+          return i;
+        }
+        </script>	
+    <body onload="startTime()">
         <div class="container">
-            <div class="time">
-                <p>It is currently <span id="time"></span> on <span id="date"></span>!</p>
-                    <script>
-                        var dt = new Date();
-                        document.getElementById("time").innerHTML = dt.toLocaleTimeString();
-                    </script>
-                    <script>
-                        var dt = new Date();
-                        document.getElementById("date").innerHTML = dt.toLocaleDateString();
-                    </script>
-            </div>
+            <div class="time" id="txt"></div>
             <div class="prompt">[<span>mizu</span>@<span>home</span> ~]$ tree</div>
             <div class="tree">
                 <h1>.</h1>

@@ -31,6 +31,7 @@ body {
 .time {
     font-family: var(--font);
     color: var(--foreground);
+    padding-bottom: 0.25rem;
 }
 
 .prompt {
